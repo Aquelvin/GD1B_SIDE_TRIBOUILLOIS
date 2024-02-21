@@ -4,31 +4,46 @@ using UnityEngine;
 
 public class patern : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField] private float speed;
     private Rigidbody2D rgbd;
+    private BoxCollider2D col;
 
-    public BoxCollider2D pointA, pointB;
-
-    public bool vaversladroite = true;
+    public bool droite = true;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        rgbd = GetComponent<Rigidbody2D>();
+        col = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.GetComponent<BoxCollider2D>().IsTouching(pointB))
-            vaversladroite = false;
-        if (gameObject.GetComponent<BoxCollider2D>().IsTouching(pointA))
-            vaversladroite = true;
+        if (droite)
+        {
+            rgbd.velocity = new Vector2(speed, rgbd.velocity.y);
+        }
+        else if (!droite)
+        {
+            rgbd.velocity = new Vector2(-speed, rgbd.velocity.y);
+        }
+    }
 
-        if (vaversladroite)
-            rgbd.AddForce(Vector2.right * 2);
-        else
-            rgbd.AddForce(Vector2.left * 2);
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Limit_enemis"))
+        {
+            if (droite)
+            {
+                droite = false;
+            } 
+            else if (!droite)
+            {
+                droite = true;
+            }
+        }
     }
 }
+
