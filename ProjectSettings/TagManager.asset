@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Limit_enemis
+  - sol
   layers:
   - Default
   - TransparentFX
