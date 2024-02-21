@@ -10,7 +10,10 @@ public class déplacements : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rgbd;
 
+    [SerializeField]
+    private BoxCollider2D bc2d;
 
+    private bool grounded = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,9 +46,25 @@ public class déplacements : MonoBehaviour
         {
             rgbd.velocity = new Vector2(0f, rgbd.velocity.y);
         }
-        if (Input.GetKey(upkey))
+
+        if (Input.GetKeyDown(upkey) && grounded)
         {
-            rgbd.AddForce(Vector2.up*2);
+            rgbd.velocity = new Vector2(rgbd.velocity.x, 12);
+            grounded = false;
+        }
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "sol")
+        {
+            grounded = true;
+        }
+        else
+        {
+            grounded = false;
         }
     }
+
 }
