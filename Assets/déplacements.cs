@@ -10,12 +10,10 @@ public class déplacements : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rgbd;
 
-    private SpriteRenderer marche;
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -24,12 +22,12 @@ public class déplacements : MonoBehaviour
         if (Input.GetKey(leftKey))
         {
             rgbd.AddForce(Vector2.left);
-
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
         if (Input.GetKey(rightKey))
         {
             rgbd.AddForce(Vector2.right);
-
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         if (Input.GetKey(upkey))
         {
