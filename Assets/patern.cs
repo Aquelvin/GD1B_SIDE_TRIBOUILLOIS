@@ -24,10 +24,12 @@ public class patern : MonoBehaviour
         if (droite)
         {
             rgbd.velocity = new Vector2(speed, rgbd.velocity.y);
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
         else if (!droite)
         {
             rgbd.velocity = new Vector2(-speed, rgbd.velocity.y);
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
     }
 
