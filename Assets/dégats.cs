@@ -9,6 +9,7 @@ public class death : MonoBehaviour
     public int health = 3;
     private Rigidbody2D body;
 
+
     public Image[] hearts;
     public Sprite full_heart;
     public Sprite empty_heart;
@@ -57,6 +58,8 @@ public class death : MonoBehaviour
             if (collision.gameObject.CompareTag("Enemis"))
             {
                 Dmg();
+                invincible = true;
+                Invoke("Vulnerable",1f);
             }
         }
     }
@@ -64,5 +67,9 @@ public class death : MonoBehaviour
     private void Restart_level()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    private void Vulnerable()
+    {
+        invincible = false;
     }
 }

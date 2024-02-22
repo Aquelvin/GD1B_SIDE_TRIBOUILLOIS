@@ -8,7 +8,7 @@ public class patern : MonoBehaviour
     private Rigidbody2D rgbd;
     private BoxCollider2D col;
 
-    public bool droite = true;
+    public bool droite = false;
 
 
     // Start is called before the first frame update
