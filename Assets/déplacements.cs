@@ -29,6 +29,15 @@ public class déplacements : MonoBehaviour
                 {
                     rgbd.velocity = new Vector2(-15f, rgbd.velocity.y);
                 }
+            if (grounded)
+            {
+                gameObject.GetComponent<Animator>().Play("marche");
+            }
+
+            else
+            {
+                gameObject.GetComponent<Animator>().Play("JUMP");
+            }
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
         else if (Input.GetKey(rightKey))
@@ -39,17 +48,38 @@ public class déplacements : MonoBehaviour
                 {
                     rgbd.velocity = new Vector2(15f, rgbd.velocity.y);
                 }
+
+            if (grounded)
+            {
+                gameObject.GetComponent<Animator>().Play("marche");
+            }
+
+            else
+            {
+                gameObject.GetComponent<Animator>().Play("JUMP");
+            }
+            
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
 
         else
         {
             rgbd.velocity = new Vector2(0f, rgbd.velocity.y);
+            if ( grounded)
+            {
+                gameObject.GetComponent<Animator>().Play("AFK");
+            }
+
+            else 
+            {
+                gameObject.GetComponent<Animator>().Play("JUMP");
+            }
         }
 
         if (Input.GetKeyDown(upkey) && grounded)
         {
             rgbd.velocity = new Vector2(rgbd.velocity.x, 10);
+            gameObject.GetComponent<Animator>().Play("JUMP");
             grounded = false;
         }
         
@@ -64,6 +94,8 @@ public class déplacements : MonoBehaviour
         else
         {
             grounded = false;
+
+            
         }
     }
 
