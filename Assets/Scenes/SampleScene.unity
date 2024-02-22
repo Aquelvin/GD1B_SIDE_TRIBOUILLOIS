@@ -10722,7 +10722,6 @@ GameObject:
   - component: {fileID: 1530000535}
   - component: {fileID: 1530000539}
   - component: {fileID: 1530000540}
-  - component: {fileID: 1530000541}
   - component: {fileID: 1530000542}
   m_Layer: 3
   m_Name: personnage
@@ -10864,7 +10863,7 @@ Transform:
   m_GameObject: {fileID: 1530000534}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -60.1, y: -1.5, z: 6}
+  m_LocalPosition: {x: -58.82, y: -1.59, z: 6}
   m_LocalScale: {x: 1.266891, y: 1.1001433, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10909,18 +10908,6 @@ MonoBehaviour:
   upkey: 273
   rgbd: {fileID: 1530000535}
   bc2d: {fileID: 0}
---- !u!114 &1530000541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530000534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c79ec9cd10eb87447a365e2d694948d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1530000542
 MonoBehaviour:
   m_ObjectHideFlags: 0
