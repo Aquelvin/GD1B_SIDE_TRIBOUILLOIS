@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Limit_enemis
   - sol
+  - Enemis
+  - Obstacle
   layers:
   - Default
   - TransparentFX
