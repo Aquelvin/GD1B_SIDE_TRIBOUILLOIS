@@ -49,7 +49,7 @@ public class déplacements : MonoBehaviour
 
         if (Input.GetKeyDown(upkey) && grounded)
         {
-            rgbd.velocity = new Vector2(rgbd.velocity.x, 12);
+            rgbd.velocity = new Vector2(rgbd.velocity.x, 10);
             grounded = false;
         }
         

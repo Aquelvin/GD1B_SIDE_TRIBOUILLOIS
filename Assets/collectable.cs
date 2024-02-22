@@ -9,6 +9,10 @@ public class collectable : MonoBehaviour
     [SerializeField]
     private BoxCollider2D bc2d;
 
+    [SerializeField]
+    private BoxCollider2D bc2d2;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,7 @@ public class collectable : MonoBehaviour
         if(other.IsTouchingLayers(3))
         {
             Destroy(bc2d.gameObject);
+            Destroy(bc2d2.gameObject);
         }
     }
 }
